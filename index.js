@@ -21,6 +21,7 @@ inputBtn.addEventListener("click", function() {
 })
 
 onValue(listInDB, function(snapshot) {
+    clearList()
     if (snapshot.exists()) {
         let itemsFromDbAsArray = Object.entries(snapshot.val())
         for (let i = 0; i < itemsFromDbAsArray.length; i++) {
@@ -38,6 +39,10 @@ onValue(listInDB, function(snapshot) {
 
 function resetInputEl() {
     inputEl.innerHTML = ""
+}
+
+function clearList() {
+    itemsFromDbAsArray = ""
 }
 
 function addOrDeleteItemFromListInEl(itemHandler){
