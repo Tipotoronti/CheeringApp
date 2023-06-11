@@ -20,14 +20,17 @@ inputBtn.addEventListener("click" , function() {
 })
 
 onValue(listInDB, function(snapshot) {
-    let itemsFromDbAsArray = Object.entries(snapshot.val())
-    for (let i = 0; i < itemsFromDbAsArray.length; i++) {
-        itemsToWorkWith = itemsFromDbAsArray[i]
-        let itemID = itemsToWorkWith[0]
-        let itemValue = itemsToWorkWith[1]
+    if (snapshot.exists()) {
+        let itemsFromDbAsArray = Object.entries(snapshot.val())
+        for (let i = 0; i < itemsFromDbAsArray.length; i++) {
+            itemsToWorkWith = itemsFromDbAsArray[i]
+            let itemID = itemsToWorkWith[0]
+            let itemValue = itemsToWorkWith[1]
 
-        addOrDeleteItemFromListInEl(itemsToWorkWith)
-    }
+            addOrDeleteItemFromListInEl(itemsToWorkWith)
+        }
+    } else {
+        publicList.innerHTML = `<li>Ich will euch jubeln sehen</li>
     
     resetInputEl()
 })
