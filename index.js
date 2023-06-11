@@ -43,7 +43,7 @@ function resetInputEl() {
 }
 
 function clearList() {
-    itemsFromDbAsArray = ""
+    publicList.innerHTML = ""
 }
 
 function addOrDeleteItemFromListInEl(itemHandler){
