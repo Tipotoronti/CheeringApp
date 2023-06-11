@@ -2,10 +2,12 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const publicList = document.getElementById("list-el")
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"
-import { getDatabase, onValue, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase, onValue, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
-const appsettings = "https://championsapp-90af9-default-rtdb.europe-west1.firebasedatabase.app/"
+const appsettings = {
+    databaseURL: "https://championsapp-90af9-default-rtdb.europe-west1.firebasedatabase.app/"
+}
 
 const app = initializeApp(appsettings)
 const database = getDatabase(app)
@@ -24,7 +26,7 @@ onValue(listInDB, function(snapshot) {
         let itemID = itemsToWorkWith[0]
         let itemValue = itemsToWorkWith[1]
 
-        addOrDeleteItemFromListInEl(itemValue)
+        addOrDeleteItemFromListInEl(itemsToWorkWith)
     }
     
     resetInputEl()
