@@ -21,9 +21,10 @@ inputBtn.addEventListener("click", function() {
 })
 
 onValue(listInDB, function(snapshot) {
-    clearList()
+    
     if (snapshot.exists()) {
         let itemsFromDbAsArray = Object.entries(snapshot.val())
+        clearList()
         for (let i = 0; i < itemsFromDbAsArray.length; i++) {
             let itemsToWorkWith = itemsFromDbAsArray[i]
             //let itemID = itemsToWorkWith[0]
