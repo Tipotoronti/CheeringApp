@@ -25,8 +25,8 @@ onValue(listInDB, function(snapshot) {
         let itemsFromDbAsArray = Object.entries(snapshot.val())
         for (let i = 0; i < itemsFromDbAsArray.length; i++) {
             itemsToWorkWith = itemsFromDbAsArray[i]
-            let itemID = itemsToWorkWith[0]
-            let itemValue = itemsToWorkWith[1]
+            //let itemID = itemsToWorkWith[0]
+            // let itemValue = itemsToWorkWith[1]
 
             addOrDeleteItemFromListInEl(itemsToWorkWith)
         }
@@ -41,5 +41,14 @@ function resetInputEl() {
 }
 
 function addOrDeleteItemFromListInEl(itemHandler){
-    publicList.innerHTML += `<li> ${itemHandler} </li>`
+    let itemID = itemHandler[0]
+    let itemValue = itemHandler[1]
+    
+    let newEl = document.createElement("li")
+    
+    newEl.textContent = itemValue
+    
+    publicList.append(newEl)
+    
+     // publicList.innerHTML += `<li> ${itemHandler} </li>`
 }
