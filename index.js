@@ -24,7 +24,7 @@ onValue(listInDB, function(snapshot) {
     if (snapshot.exists()) {
         let itemsFromDbAsArray = Object.entries(snapshot.val())
         for (let i = 0; i < itemsFromDbAsArray.length; i++) {
-            itemsToWorkWith = itemsFromDbAsArray[i]
+            let itemsToWorkWith = itemsFromDbAsArray[i]
             //let itemID = itemsToWorkWith[0]
             // let itemValue = itemsToWorkWith[1]
 
