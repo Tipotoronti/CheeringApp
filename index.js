@@ -17,6 +17,7 @@ inputBtn.addEventListener("click" , function() {
     let inputValue = inputEl.value
     push(listInDB, inputValue)
     resetInputEl()
+    console.log("ich funktioniere")
 })
 
 onValue(listInDB, function(snapshot) {
@@ -30,7 +31,7 @@ onValue(listInDB, function(snapshot) {
             addOrDeleteItemFromListInEl(itemsToWorkWith)
         }
     } else {
-        publicList.innerHTML = `<li>Ich will euch jubeln sehen</li>
+        publicList.innerHTML = `<li>Ich will euch jubeln sehen</li>`
     
     resetInputEl()
 })
