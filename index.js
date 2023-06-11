@@ -13,7 +13,7 @@ const app = initializeApp(appsettings)
 const database = getDatabase(app)
 const listInDB = ref(database, "listOfStatements")
 
-inputBtn.addEventListener("click" , function() {
+inputBtn.addEventListener("click", function() {
     let inputValue = inputEl.value
     push(listInDB, inputValue)
     resetInputEl()
