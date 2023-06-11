@@ -32,7 +32,7 @@ onValue(listInDB, function(snapshot) {
         }
     } else {
         publicList.innerHTML = `<li>Ich will euch jubeln sehen</li>`
-    
+    }
     resetInputEl()
 })
 
