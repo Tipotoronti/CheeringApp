@@ -3,7 +3,7 @@ const inputBtn = document.getElementById("input-btn")
 const publicList = document.getElementById("list-el")
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"
-import { getDatabase, onValue, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
+import { getDatabase, onValue, ref, push, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"
 
 const appsettings = {
     databaseURL: "https://championsapp-90af9-default-rtdb.europe-west1.firebasedatabase.app/"
