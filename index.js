@@ -46,15 +46,28 @@ function clearList() {
     publicList.innerHTML = ""
 }
 
-function addOrDeleteItemFromListInEl(itemHandler){
-    let itemID = itemHandler[0]
-    let itemValue = itemHandler[1]
+// function addOrDeleteItemFromListInEl(itemHandler){
+//    let itemID = itemHandler[0]
+  //  let itemValue = itemHandler[1]
     
-    let newEl = document.createElement("li")
+    //let newEl = document.createElement("li")
     
-    newEl.textContent = itemValue
+    //newEl.textContent = itemValue
     
-    publicList.append(newEl)
+  //  publicList.append(newEl)
     
      // publicList.innerHTML += `<li> ${itemHandler} </li>`
+}
+function addOrDeleteItemFromListInEl(itemHandler){
+    //publicList.innerHTML += `<li> ${itemHandler} </li>`
+
+    let newEl = document.createElement("li")
+    let itemID = itemHandler[0]
+    let itemValue = itemHandler[1]
+    newEl.innerText = itemValue
+
+    newEl.addEventListener("dblclick", function() {
+        let exactPlaceOfItem = ref(database, `listOfStatements/${itemID}`)
+        remove(exactPlaceOfItem)
+    })
 }
