@@ -64,7 +64,9 @@ function addOrDeleteItemFromListInEl(itemHandler){
     let newEl = document.createElement("li")
     let itemID = itemHandler[0]
     let itemValue = itemHandler[1]
-    newEl.innerText = itemValue
+    newEl.textContent = itemValue
+    
+    publicList.append(newEl)
 
     newEl.addEventListener("dblclick", function() {
         let exactPlaceOfItem = ref(database, `listOfStatements/${itemID}`)
