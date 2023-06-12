@@ -57,7 +57,7 @@ function clearList() {
   //  publicList.append(newEl)
     
      // publicList.innerHTML += `<li> ${itemHandler} </li>`
-}
+//}
 function addOrDeleteItemFromListInEl(itemHandler){
     //publicList.innerHTML += `<li> ${itemHandler} </li>`
 
